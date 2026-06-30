@@ -1,0 +1,6 @@
+# Requirements
+Flask
+pandas
+numpy
+scikit-learn
+joblib

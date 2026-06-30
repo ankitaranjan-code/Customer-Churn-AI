@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChurnAI - Enterprise Customer Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Background Elements -->
+    <div class="bg-elements">
+        <div class="bg-orb orb-1"></div>
+        <div class="bg-orb orb-2"></div>
+        <div class="bg-orb orb-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Floating Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <i class="fa-solid fa-layer-group text-accent"></i>
+                <span>ChurnAI</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#statistics">Impact</a>
+                <a href="#predict">Prediction Engine</a>
+            </div>
+            <div class="nav-actions">
+                <a href="#predict" class="btn btn-primary btn-glow">Start Predicting</a>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <a href="#features" class="mobile-link">Features</a>
+            <a href="#statistics" class="mobile-link">Impact</a>
+            <a href="#predict" class="mobile-link">Prediction Engine</a>
+            <a href="#predict" class="btn btn-primary mobile-btn">Start Predicting</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-container">
+            <div class="hero-content reveal-left">
+                <div class="badge">
+                    <span class="badge-dot"></span> Next-Gen Analytics 3.0
+                </div>
+                <h1 class="hero-title">
+                    Predict Customer Churn with <span class="text-gradient">Precision.</span>
+                </h1>
+                <p class="hero-desc">
+                    Empower your retention team with state-of-the-art machine learning models. Analyze behavior, foresee churn, and protect your MRR before customers even think about leaving.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#predict" class="btn btn-primary btn-glow btn-lg">Launch Analysis <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#features" class="btn btn-secondary btn-lg">Explore Features</a>
+                </div>
+            </div>
+            <div class="hero-visual reveal-right">
+                <!-- Floating Dashboard Card Mockup -->
+                <div class="glass-panel mockup-card float-anim">
+                    <div class="mockup-header">
+                        <div class="mockup-dots"><span></span><span></span><span></span></div>
+                        <div class="mockup-title">churn_analysis_v2.model</div>
+                    </div>
+                    <div class="mockup-body">
+                        <div class="mockup-row">
+                            <div class="mockup-avatar"><i class="fa-solid fa-user"></i></div>
+                            <div class="mockup-info">
+                                <div class="mockup-name">Customer #7284</div>
+                                <div class="mockup-sub">Enterprise Plan</div>
+                            </div>
+                            <div class="mockup-status text-danger">87% Risk</div>
+                        </div>
+                        <div class="mockup-chart">
+                            <div class="chart-bar" style="height: 40%"></div>
+                            <div class="chart-bar" style="height: 60%"></div>
+                            <div class="chart-bar" style="height: 30%"></div>
+                            <div class="chart-bar active" style="height: 90%"></div>
+                            <div class="chart-bar" style="height: 50%"></div>
+                        </div>
+                        <div class="mockup-action">
+                            <div class="action-btn">Trigger Intervention <i class="fa-solid fa-bolt"></i></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="floating-badge float-anim-delay-1">
+                    <i class="fa-solid fa-check-circle text-success"></i> 98.4% Accuracy
+                </div>
+                <div class="floating-badge float-anim-delay-2" style="bottom: 10%; right: -5%;">
+                    <i class="fa-solid fa-shield-halved text-accent"></i> SOC2 Compliant
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Statistics Section -->
+    <section id="statistics" class="section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card glass-panel reveal-up">
+                    <div class="stat-icon"><i class="fa-solid fa-bullseye text-primary"></i></div>
+                    <div class="stat-value counter" data-target="98.5">0</div><span class="stat-suffix">%</span>
+                    <div class="stat-label">Prediction Accuracy</div>
+                </div>
+                <div class="stat-card glass-panel reveal-up" style="transition-delay: 100ms;">
+                    <div class="stat-icon"><i class="fa-solid fa-users text-secondary"></i></div>
+                    <div class="stat-value counter" data-target="2.4">0</div><span class="stat-suffix">M+</span>
+                    <div class="stat-label">Customers Analyzed</div>
+                </div>
+                <div class="stat-card glass-panel reveal-up" style="transition-delay: 200ms;">
+                    <div class="stat-icon"><i class="fa-solid fa-bolt text-accent"></i></div>
+                    <div class="stat-value counter" data-target="250">0</div><span class="stat-suffix">ms</span>
+                    <div class="stat-label">Avg. Prediction Time</div>
+                </div>
+                <div class="stat-card glass-panel reveal-up" style="transition-delay: 300ms;">
+                    <div class="stat-icon"><i class="fa-solid fa-chart-line text-success"></i></div>
+                    <div class="stat-value counter" data-target="32">0</div><span class="stat-suffix">%</span>
+                    <div class="stat-label">Retention Improvement</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <h2 class="section-title">Enterprise-Grade <span class="text-gradient">Intelligence</span></h2>
+                <p class="section-subtitle">Everything you need to predict, understand, and prevent customer churn at scale.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card glass-panel reveal-up">
+                    <div class="feature-icon"><i class="fa-solid fa-brain"></i></div>
+                    <h3>Deep Learning Engine</h3>
+                    <p>State-of-the-art neural networks trained on vast datasets to detect microscopic behavioral changes.</p>
+                </div>
+                <div class="feature-card glass-panel reveal-up" style="transition-delay: 100ms;">
+                    <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Real-Time Analysis</h3>
+                    <p>Process customer data instantly. Get immediate risk scoring the moment you input their details.</p>
+                </div>
+                <div class="feature-card glass-panel reveal-up" style="transition-delay: 200ms;">
+                    <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Data Privacy First</h3>
+                    <p>Bank-grade encryption ensures your proprietary customer data remains strictly confidential.</p>
+                </div>
+                <div class="feature-card glass-panel reveal-up">
+                    <div class="feature-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h3>Actionable Insights</h3>
+                    <p>We don't just provide a score. We give targeted recommendations to save at-risk accounts.</p>
+                </div>
+                <div class="feature-card glass-panel reveal-up" style="transition-delay: 100ms;">
+                    <div class="feature-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>API Integration</h3>
+                    <p>Seamlessly connect our prediction engine directly to your CRM via our robust REST API.</p>
+                </div>
+                <div class="feature-card glass-panel reveal-up" style="transition-delay: 200ms;">
+                    <div class="feature-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h3>Bias Mitigation</h3>
+                    <p>Advanced algorithmic fairness controls ensure your predictions remain objective and accurate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prediction Form Section -->
+    <section id="predict" class="section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <h2 class="section-title">Prediction <span class="text-gradient">Engine</span></h2>
+                <p class="section-subtitle">Input customer telemetry to generate an instant AI risk assessment.</p>
+            </div>
+            
+            <div class="form-container glass-panel reveal-up">
+                <form id="churnForm" action="{{ url_for('main.predict') }}" method="POST">
+                    
+                    <!-- Section 1: Customer Information -->
+                    <div class="form-section">
+                        <div class="form-section-header">
+                            <i class="fa-solid fa-user-astronaut"></i> Customer Information
+                        </div>
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label for="SeniorCitizen">Senior Citizen</label>
+                                <div class="select-wrapper">
+                                    <select name="SeniorCitizen" id="SeniorCitizen" required>
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down select-icon"></i>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="Partner">Partner</label>
+                                <div class="select-wrapper">
+                                    <select name="Partner" id="Partner" required>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down select-icon"></i>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="Dependents">Dependents</label>
+                                <div class="select-wrapper">
+                                    <select name="Dependents" id="Dependents" required>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down select-icon"></i>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="tenure">Tenure (Months)</label>
+                                <input type="number" name="tenure" id="tenure" placeholder="e.g. 24" required min="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 2: Service Information -->
+                    <div class="form-section">
+                        <div class="form-section-header">
+                            <i class="fa-solid fa-satellite-dish"></i> Service Information
+                        </div>
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label for="PhoneService">Phone Service</label>
+                                <div class="select-wrapper">
+                                    <select name="PhoneService" id="PhoneService" required>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down select-icon"></i>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="MultipleLines">Multiple Lines</label>
+                                <div class="select-wrapper">
+                                    <select name="MultipleLines" id="MultipleLines" required>
+                                        <option value="No">No</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No phone service">No phone service</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down select-icon"></i>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="InternetService">Internet Service</label>
+                                <div class="select-wrapper">
+                                    <select name="InternetService" id="InternetService" required>
+                                        <option value="DSL">DSL</option>
+                                        <option value="Fiber optic">Fiber optic</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down select-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: Online Services -->
+                    <div class="form-section">
+                        <div class="form-section-header">
+                            <i class="fa-solid fa-cloud"></i> Online Services
+                        </div>
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label for="OnlineSecurity">Online Security</label>
+                                <div class="select-wrapper">
+                                    <select name="OnlineSecurity" id="OnlineSecurity" required>
+                                        <option value="No">No</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No internet service">No internet service</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down select-icon"></i>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="OnlineBackup">Online Backup</label>
+                                <div class="select-wrapper">
+                                    <select name="OnlineBackup" id="OnlineBackup" required>
+                                        <option value="No">No</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No internet service">No internet service</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down select-icon"></i>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="DeviceProtection">Device Protection</label>
+                                <div class="select-wrapper">
+                                    <select name="DeviceProtection" id="DeviceProtection" required>
+                                        <option value="No">No</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No internet service">No internet service</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down select-icon"></i>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="TechSupport">Tech Support</label>
+                                <div class="select-wrapper">
+                                    <select name="TechSupport" id="TechSupport" required>
+                                        <option value="No">No</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No internet service">No internet service</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down select-icon"></i>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="StreamingTV">Streaming TV</label>
+                                <div class="select-wrapper">
+                                    <select name="StreamingTV" id="StreamingTV" required>
+                                        <option value="No">No</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No internet service">No internet service</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down select-icon"></i>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="StreamingMovies">Streaming Movies</label>
+                                <div class="select-wrapper">
+                                    <select name="StreamingMovies" id="StreamingMovies" required>
+                                        <option value="No">No</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No internet service">No internet service</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down select-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 4: Billing Information -->
+                    <div class="form-section">
+                        <div class="form-section-header">
+                            <i class="fa-solid fa-file-invoice-dollar"></i> Billing Information
+                        </div>
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label for="Contract">Contract</label>
+                                <div class="select-wrapper">
+                                    <select name="Contract" id="Contract" required>
+                                        <option value="Month-to-month">Month-to-month</option>
+                                        <option value="One year">One year</option>
+                                        <option value="Two year">Two year</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down select-icon"></i>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="PaperlessBilling">Paperless Billing</label>
+                                <div class="select-wrapper">
+                                    <select name="PaperlessBilling" id="PaperlessBilling" required>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down select-icon"></i>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="PaymentMethod">Payment Method</label>
+                                <div class="select-wrapper">
+                                    <select name="PaymentMethod" id="PaymentMethod" required>
+                                        <option value="Electronic check">Electronic check</option>
+                                        <option value="Mailed check">Mailed check</option>
+                                        <option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
+                                        <option value="Credit card (automatic)">Credit card (automatic)</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down select-icon"></i>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="MonthlyCharges">Monthly Charges ($)</label>
+                                <input type="number" step="0.01" name="MonthlyCharges" id="MonthlyCharges" placeholder="e.g. 75.50" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="TotalCharges">Total Charges ($)</label>
+                                <input type="number" step="0.01" name="TotalCharges" id="TotalCharges" placeholder="e.g. 1800.00" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-action">
+                        <button type="submit" class="btn btn-primary btn-glow btn-submit" id="submitBtn">
+                            <i class="fa-solid fa-microchip"></i> Run AI Analysis
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Result Card -->
+            {% if prediction_text %}
+            <div class="result-container reveal-up" id="resultBlock">
+                <div class="glass-panel result-card {% if churn_result %}risk-high{% else %}risk-low{% endif %}">
+                    <div class="result-header">
+                        <h3>AI Analysis Result</h3>
+                        <span class="badge {% if churn_result %}badge-danger{% else %}badge-success{% endif %}">
+                            {% if churn_result %}High Risk{% else %}Safe{% endif %}
+                        </span>
+                    </div>
+                    
+                    <div class="result-body">
+                        <div class="progress-circle-wrap">
+                            <svg class="progress-circle" viewBox="0 0 100 100">
+                                <circle class="bg" cx="50" cy="50" r="45"></circle>
+                                <circle class="progress" cx="50" cy="50" r="45" stroke-dasharray="283" stroke-dashoffset="{{ 283 - (283 * prediction_prob / 100) }}"></circle>
+                            </svg>
+                            <div class="progress-text">
+                                <span class="val">{{ prediction_prob }}%</span>
+                                <span class="lbl">Probability</span>
+                            </div>
+                        </div>
+                        
+                        <div class="result-details">
+                            <div class="detail-row">
+                                <span class="detail-label"><i class="fa-solid fa-microscope"></i> Confidence Score:</span>
+                                <span class="detail-val">94.2%</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label"><i class="fa-solid fa-comment-dots"></i> AI Recommendation:</span>
+                                <span class="detail-val">
+                                    {% if churn_result %}
+                                        Immediate intervention required. Recommend tailored retention offer.
+                                    {% else %}
+                                        Customer shows stable behavior. Maintain current engagement strategy.
+                                    {% endif %}
+                                </span>
+                            </div>
+                            <div class="result-message">
+                                {{ prediction_text }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-choose" class="section">
+        <div class="container">
+            <div class="why-us-card glass-panel reveal-up">
+                <div class="why-content">
+                    <h2>Stop guessing. Start <span class="text-gradient">knowing.</span></h2>
+                    <p>Legacy systems tell you what happened yesterday. ChurnAI tells you what will happen tomorrow. Join the world's most innovative companies predicting churn with unprecedented accuracy.</p>
+                    <a href="#predict" class="btn btn-primary btn-glow">Get Started Today</a>
+                </div>
+                <div class="why-visual">
+                    <i class="fa-solid fa-cubes text-accent"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="nav-logo">
+                        <i class="fa-solid fa-layer-group text-accent"></i>
+                        <span>ChurnAI</span>
+                    </a>
+                    <p class="footer-desc">Enterprise-grade predictive analytics for modern retention teams.</p>
+                </div>
+                <div class="footer-links-grid">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="#">Features</a>
+                        <a href="#">Integrations</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">Changelog</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="#">Documentation</a>
+                        <a href="#">API Reference</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Case Studies</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#">About</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Security</a>
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; 2026 ChurnAI Inc. All rights reserved.</div>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-discord"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
